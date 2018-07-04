@@ -1,0 +1,52 @@
+﻿<Window x:Class="CustomTabControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomTabControl"
+        mc:Ignorable="d"
+        xmlns:syscol="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+        xmlns:customs="clr-namespace:CustomTabControl.CustomsControls"
+        Title="MainWindow" Height="500" Width="1100">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <!-- Sample adding tabs from designer, they will appear when program started -->
+            <customs:CustomTabView Grid.Row="0" x:Name="CustomTabView" >
+            <customs:CustomTabView.CustomItems>
+                <TabItem Header="111"/>
+                <TabItem Header="123">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <WrapPanel Orientation="Horizontal">
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                        </WrapPanel>
+                        <WrapPanel Grid.Row="1" Orientation="Vertical">
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                            <Button Width="100" Content="Button"/>
+                        </WrapPanel>
+                    </Grid>
+                </TabItem>
+            </customs:CustomTabView.CustomItems>
+        </customs:CustomTabView>
+        <Button Margin="5" Grid.Row="1" Content="Add tab from window" Name="AddTab" Click="AddTab_Click" />
+    </Grid>
+</Window>

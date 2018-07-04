@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="CustomTabControl.CustomsControls.CustomTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CustomTabControl.CustomsControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TabControl Name="MainTabView" SizeChanged="MainTabView_SizeChanged"
+                    SelectionChanged="MainTabView_SelectionChanged">
+            <TabControl.InputBindings>
+                <KeyBinding Modifiers="Ctrl" Key="W" Command="{Binding CloseShortcutsCommand}" />
+                <KeyBinding Modifiers="Ctrl" Key="N" Command="{Binding AddShortcutsCommand}" />
+            </TabControl.InputBindings>
+            <TabItem Name="AddTab" PreviewMouseDown="AddTab_PreviewMouseDown" Margin="2">
+                <TabItem.Header>
+                    <Image Source="../assets/plus.png" Width="30" Margin="-5,-2,-2,0">
+                        <Image.ToolTip>
+                            <ToolTip Content="Add tab" />
+                        </Image.ToolTip>
+                    </Image>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ContentControl>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="Press " FontSize="20" />
+                                    <TextBlock FontWeight="Bold" Text=" CTRL + N" FontSize="20" />
+                                    <TextBlock Text=" or " FontSize="20" />
+                                    <Image Source="../assets/Plus.png" Width="20" Margin="0,5,0,0" />
+                                    <TextBlock Text=" to add tab" FontSize="20" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="Press " FontSize="20" />
+                                    <TextBlock FontWeight="Bold" Text=" CTRL + W" FontSize="20" />
+                                    <TextBlock Text=" or " FontSize="20" />
+                                    <Image Source="../assets/close.png" Width="20" Margin="0,5,0,0" />
+                                    <TextBlock Text=" to close tab" FontSize="20" />
+                                </StackPanel>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</UserControl>
