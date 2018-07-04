@@ -11,5 +11,5 @@ Implementation of custom tab control (same as in web browser).
 # Внешний вид
 ![alt text](https://github.com/SLengo/WPF-Custom-TabControl/blob/master/demoimage/1.png?raw=true)
 
-# Добавление вкладок используя XAML-разметку
+# Добавление вкладок, используя XAML-разметку
 ![alt text](https://github.com/SLengo/WPF-Custom-TabControl/blob/master/demoimage/2.PNG?raw=true)
